@@ -1,0 +1,34 @@
+//SimpleFunc.h
+
+namespace BestComimpl
+{
+	void SimpleFunc(void);
+
+}
+namespace ProgComimpl
+{
+	void SimpleFunc(void);
+}
+
+
+//SimpleFuc.cpp
+
+#include <iostream>
+#include "SimpleFunc.h"
+void BestComimpl::SimpleFunc(void)
+{
+	std::cout << "Bestcom이 정의한 함수" << std::endl;
+}
+void ProgComimpl::SimpleFunc(void)
+{
+	std::cout << "Progcom이 정의한 함수" << std::endl;
+}
+
+
+//SimpleMain.cpp
+#include "SimpleFunc.h"
+int main(void)
+{
+	BestComimpl::SimpleFunc();
+	ProgComimpl::SimpleFunc();
+	return 0;
