@@ -16,7 +16,7 @@ public:
 
 	void Calculator::ShowOpCount()
 	{
-		cout << "ľĄźŔ:" << sum[0]<<" " << "ťŹźŔ:" << sum[1] << " "<<"°öźŔ:" << sum[2] <<" "<<"łŞ´°źŔ:" << sum[3];
+		cout << "덧셈:" << sum[0]<<" " << "뺄셈:" << sum[1] << " "<<"곱셈:" << sum[2] <<" "<<"나눗셈:" << sum[3];
 	}
 	void Calculator::Init()
 	{
