@@ -29,3 +29,4 @@ int main(void)
 	pnt.Showstring();
 	return 0;
 }
+//함수이름(char * 변수)가 아닌 함수이름(const char* 변수)이 맞는 방식이다.
