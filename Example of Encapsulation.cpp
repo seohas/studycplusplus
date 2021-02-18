@@ -33,7 +33,7 @@ public:
 		center.ShowPointInfo();
 	
 	}
-	//Ring클래스, Cricle 클래스, Point 클래스 모두 자신의 정보를 출력하기 위한 함수를 멤버에 포함시켜서 캡슐화를 완성하였다
+	
 };
 class Ring
 {
@@ -62,3 +62,4 @@ int main(void)
 	ring.ShowRingInfo();
 	return 0;
 }
+//Ring클래스, Cricle 클래스, Point 클래스 모두 자신의 정보를 출력하기 위한 함수를 멤버에 포함시켜서 캡슐화를 완성하였다
