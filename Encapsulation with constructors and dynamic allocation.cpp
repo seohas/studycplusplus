@@ -11,16 +11,16 @@ namespace COMP_POS
 		switch (pos)
 		{
 		case CLERK:
-			cout << "»ç¿ø" << endl;
+			cout << "ì‚¬ì›" << endl;
 			break;
 		case SENIOR:
-			cout << "ÁÖÀÓ" << endl;
+			cout << "ì£¼ìž„" << endl;
 			break;
 		case ASSIST:
-			cout << "´ë¸®" << endl;
+			cout << "ëŒ€ë¦¬" << endl;
 			break;
 		case MANAGER:
-			cout << "°úÀå" << endl;
+			cout << "ê³¼ìž¥" << endl;
 		}
 	}
 
@@ -44,9 +44,9 @@ public:
 	}
 	void ShowNameCardInfo()
 	{
-		cout << "ÀÌ¸§: " << name << endl;
-		cout << "È¸»ç: " << comname << endl;
-		cout << "Á÷±Þ: ";
+		cout << "ì´ë¦„: " << name << endl;
+		cout << "íšŒì‚¬: " << comname << endl;
+		cout << "ì§ê¸‰: ";
 		COMP_POS::ShowPositon(position);
 		cout << endl;
 	}
@@ -60,9 +60,9 @@ public:
 };
 int main(void)
 {
-	NameCard F("Çª¹Ù¿À", "BABY", "01011112222", COMP_POS::CLERK);
-	NameCard A("¾ÆÀÌ¹Ù¿À", "FOODFIGHTER", "01033334444", COMP_POS::SENIOR);
-	NameCard L("·¯¹Ù¿À", "FUNNY", "01055556666", COMP_POS::ASSIST);
+	NameCard F("í‘¸ë°”ì˜¤", "BABY", "01011112222", COMP_POS::CLERK);
+	NameCard A("ì•„ì´ë°”ì˜¤", "FOODFIGHTER", "01033334444", COMP_POS::SENIOR);
+	NameCard L("ëŸ¬ë°”ì˜¤", "FUNNY", "01055556666", COMP_POS::ASSIST);
 	F.ShowNameCardInfo();
 	A.ShowNameCardInfo();
 	L.ShowNameCardInfo();
