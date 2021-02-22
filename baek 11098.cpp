@@ -26,8 +26,7 @@ int main(void)
 			if (price[j] > exprice)
 			{
 				exprice = price[j];
-				*maxname=name[j];
-				
+				*maxname=name[j];  //?		
 			}
 				
 		}
