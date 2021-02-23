@@ -17,8 +17,8 @@ public:
 	}
 	void ShowMyFriendInfo()
 	{
-		cout << "ÀÌ¸§: " << name << endl;
-		cout << "³ªÀÌ: " << age << endl;
+		cout << "이름: " << name << endl;
+		cout << "나이: " << age << endl;
 	}
 	~MyFriendInfo()
 	{
@@ -41,8 +41,8 @@ public:
 	void ShowMyFriendDetailInfo()
 	{
 		ShowMyFriendInfo();
-		cout << "ÁÖ¼Ò: " << addr << endl;
-		cout << "ÀüÈ­: " << phone << endl << endl;
+		cout << "주소: " << addr << endl;
+		cout << "전화: " << phone << endl << endl;
 	}
 	~MyFriendDeTailInfo()
 	{
