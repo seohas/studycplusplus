@@ -148,7 +148,7 @@ public:
 int main(void)
 {
 	EmployHandler handler;
-	ForeignSalesWorker* fubao = new ForeignSalesWorker("푸비오", 1000, 0.1, RISK_LEVEL::RISK_A);
+	ForeignSalesWorker* fubao = new ForeignSalesWorker("푸바오", 1000, 0.1, RISK_LEVEL::RISK_A);
 	fubao->AddSalesResult(7000);
 	handler.AddEmployee(fubao);
 	ForeignSalesWorker* aibao = new ForeignSalesWorker("아이바오", 1000, 0.1, RISK_LEVEL::RISK_B);
