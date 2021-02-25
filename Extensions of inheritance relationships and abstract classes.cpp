@@ -148,13 +148,13 @@ public:
 int main(void)
 {
 	EmployHandler handler;
-	ForeignSalesWorker* fubao = new ForeignSalesWorker("Çª¹Ù¿À", 1000, 0.1, RISK_LEVEL::RISK_A);
+	ForeignSalesWorker* fubao = new ForeignSalesWorker("í‘¸ë¹„ì˜¤", 1000, 0.1, RISK_LEVEL::RISK_A);
 	fubao->AddSalesResult(7000);
 	handler.AddEmployee(fubao);
-	ForeignSalesWorker* aibao = new ForeignSalesWorker("¾ÆÀÌ¹Ù¿À", 1000, 0.1, RISK_LEVEL::RISK_B);
+	ForeignSalesWorker* aibao = new ForeignSalesWorker("ì•„ì´ë°”ì˜¤", 1000, 0.1, RISK_LEVEL::RISK_B);
 	aibao->AddSalesResult(7000);
 	handler.AddEmployee(aibao);
-	ForeignSalesWorker* lebao = new ForeignSalesWorker("·¯¹Ù¿À", 1000, 0.1, RISK_LEVEL::RISK_C);
+	ForeignSalesWorker* lebao = new ForeignSalesWorker("ëŸ¬ë°”ì˜¤", 1000, 0.1, RISK_LEVEL::RISK_C);
 	lebao->AddSalesResult(7000);
 	handler.AddEmployee(lebao);
 	handler.ShowAllSalaryInfo();
