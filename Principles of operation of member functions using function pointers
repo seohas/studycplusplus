@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+// 모델로 삼을 클래스 Data
+class Data
+{
+private:
+	int data;
+public:
+	Data(int num) :data(num)
+	{}
+	void ShowData() { cout << "Data: " << data << endl; }
+	void Add(int num) { data += num; }
+};
+
+//클래스 Data를 흉내낸 영역
+typedef struct Data
+{
+	int data;
+	void(*ShowData)(Data*);
+	void (*Add)(Data*, int);
+}Data;
+void ShowData(Data* THIS) { cout << "Data: " << THIS->data << endl; }
+void Add(Data* THIS, int num) { THIS->data += num; }
+
+int main(void)
+{
+	Data obj1 = { 15,ShowData,Add }; //함수 Add의 주소값이 전달됨, 구조체의 세번째 멤버 Add를 초기화
+	Data obj2 = { 7,ShowData,Add };
+	obj1.Add(&obj1, 17);
+	obj2.Add(&obj2, 9);
+	obj1.ShowData(&obj1);
+	obj2.ShowData(&obj2);
+	return 0;
+}
+
+//실행결과: 
+/*Data: 32
+  Data: 16*/
