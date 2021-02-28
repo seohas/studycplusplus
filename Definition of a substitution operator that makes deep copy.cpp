@@ -78,3 +78,98 @@ int main(void)
 	pman3.Shot();
 	return 0;
 }
+//문제 2 상속 이용
+#define _CRT_SECURE_NO_DEPRECATE
+#define _CRT_SEQURE_NO_WARNINGS
+#include <iostream>
+#include <cstring>
+class Book
+{
+private:
+	char* title;
+	char* isbn;
+	int price;
+public:
+	Book(const char* title, const char* isbn, int p) :price(p)
+	{
+		this->title = new char[strlen(title) + 1];
+		this->isbn = new char[strlen(isbn) + 1];
+		strcpy(this->title, title);
+		strcpy(this->isbn, isbn);
+	}
+	void ShowBookInfo()
+	{
+		cout << "제목: " << title << endl;
+		cout << "ISBN: " << isbn << endl;
+		cout << "가격: " << price << endl;
+	}
+	Book(const Book& ref) :price(ref.price)
+	{
+		this->title= new char[strlen(ref.title) + 1];
+		this->isbn = new char[strlen(ref.isbn) + 1];
+		strcpy(this->title, ref.title);
+		strcpy(this->isbn, ref.isbn);
+	}
+	Book& operator=(const Book& ref)
+	{
+		delete[] title;
+		delete[] isbn;
+		this->title = new char[strlen(ref.title) + 1];
+		this->isbn = new char[strlen(ref.isbn) + 1];
+		strcpy(this->title, ref.title);
+		strcpy(this->isbn, ref.isbn);
+		price = ref.price;
+		return *this;
+	}
+	~Book()
+	{
+		delete[]title;
+		delete[]isbn;
+	}
+};
+class Ebook :public Book
+{
+private:
+	char* DRMKey;
+public:
+	Ebook(const char* title, const char* isbn, int price, const char* DRMKey) :Book(title, isbn, price)
+	{
+		this->DRMKey = new char[strlen(DRMKey) + 1];
+		strcpy(this->DRMKey, DRMKey);
+	}
+	void ShowEbookInfo()
+	{
+		ShowBookInfo();
+		cout << "인증키: " << DRMKey << endl;
+	}
+	Ebook(const Ebook& ref) :Book(ref)
+	{
+		this->DRMKey = new char[strlen(ref.DRMKey) + 1];
+		strcpy(this->DRMKey, ref.DRMKey);
+	}
+	Ebook& operator=(const Ebook& ref)
+	{
+		Book::operator=(ref);
+		delete[]DRMKey;
+		this->DRMKey = new char[strlen(ref.DRMKey) + 1];
+		strcpy(this->DRMKey, ref.DRMKey);
+		return *this;
+	}
+	~Ebook()
+	{
+		delete[]DRMKey;
+	}
+};
+int main(void)
+{
+	Book book("Fubao", "2020-07-20", 10000);
+
+	Ebook book1("Fubao", "2020-07-20", 10000, "vhqk07dh20");
+	Ebook book2 = book1;
+	book2.ShowEbookInfo();
+	cout << endl;
+	Ebook ebook3("dummy", "dummy", 0, "dummy");
+	ebook3 = book2;
+	ebook3.ShowEbookInfo();
+	return 0;
+}
