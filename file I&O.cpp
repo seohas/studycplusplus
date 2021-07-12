@@ -205,3 +205,26 @@ int main(){
     fin.close();
     return 0;
 }
+/*input.txt
+register Lee 10000
+register Kim 20000
+showowners
+checkin Lee dogLee 3000 3
+checkin Lee catLee 2000 2
+checkin Kim dogKim 2500 6
+showpets
+showowners
+getbalance
+pass 4
+showpets
+showowners
+getbalance
+pass 2
+showpets
+showowners
+getbalance
+checkin Kim snakeKim 1000 2
+showpets
+showowners
+getbalance
+*/
